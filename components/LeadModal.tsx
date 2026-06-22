@@ -94,12 +94,12 @@ export default function LeadModal({ open, onClose }: Props) {
               />
               <div>
                 <label className="block text-sm font-medium text-[#1a3057] mb-1.5">
-                  Ім&apos;я <span className="text-red-400">*</span>
+                  Прізвище та ім&apos;я <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="Ваше ім'я"
+                  placeholder="Прізвище та ім'я"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   className="w-full border border-gray-200 rounded-lg px-4 py-3 text-[#1a3057] placeholder-gray-300 focus:outline-none focus:border-[#c9870a] transition-colors text-sm"

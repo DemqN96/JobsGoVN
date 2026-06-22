@@ -10,7 +10,7 @@ export interface Member {
 }
 
 const TEAM: Member[] = [
-  { name: 'Генеральний директор', role: 'CEO Jobs Go VN', photo: '/team/IMG_7888.JPG', email: 'ceo.openvisa@gmail.com' },
+  { name: 'Світлана Орлюк', role: 'Генеральний директор', photo: '/team/IMG_7888.JPG', email: 'ceo.openvisa@gmail.com' },
   { name: 'Аніта Пневська', role: 'Операційний директор', photo: '/team/IMG_5783.JPG' },
   { name: 'Світлана Козлова', role: 'Керівник департаменту працевлаштування за кордоном', photo: '/team/IMG_5809.JPG' },
   { name: 'Людмила Вознюк', role: 'Старший менеджер з працевлаштування за кордоном', photo: '/team/IMG_5801.JPG' },
@@ -28,7 +28,13 @@ const TEAM: Member[] = [
   { name: 'Світлана Стукан', role: 'Адміністратор', photo: '/team/IMG_5730.JPG', phone: '+380970774947' },
 ];
 
-const GROUP_PHOTOS = [
+// Горизонтальні (3:2) та портретні (2:3) фото — групуємо за орієнтацією,
+// щоб пропорції контейнера збігались з фото і нічого не обрізалось.
+const GROUP_LANDSCAPE = [
+  '/team/IMG_5831.JPG',
+  '/team/IMG_5817.JPG',
+];
+const GROUP_PORTRAIT = [
   '/team/IMG_5827.JPG',
   '/team/IMG_5813.JPG',
 ];
@@ -47,22 +53,40 @@ export default function Team() {
           </p>
         </div>
 
-        {/* Group photos: 1 large + 2 small */}
-        <div className="grid grid-cols-2 gap-3 mb-14">
-          {GROUP_PHOTOS.map((src) => (
-            <div
-              key={src}
-              className="relative rounded-2xl aspect-[3/4] overflow-hidden"
-            >
-              <Image
-                src={src}
-                alt="Команда Jobs Go VN"
-                fill
-                sizes="50vw"
-                className="object-cover object-center hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-          ))}
+        {/* Спільні фото: горизонтальні в один ряд, портретні в інший */}
+        <div className="mb-14 space-y-3">
+          <div className="grid grid-cols-2 gap-3">
+            {GROUP_LANDSCAPE.map((src) => (
+              <div
+                key={src}
+                className="relative rounded-2xl aspect-[3/2] overflow-hidden"
+              >
+                <Image
+                  src={src}
+                  alt="Команда Jobs Go VN"
+                  fill
+                  sizes="50vw"
+                  className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            {GROUP_PORTRAIT.map((src) => (
+              <div
+                key={src}
+                className="relative rounded-2xl aspect-[2/3] overflow-hidden"
+              >
+                <Image
+                  src={src}
+                  alt="Команда Jobs Go VN"
+                  fill
+                  sizes="50vw"
+                  className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
