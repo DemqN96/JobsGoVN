@@ -12,7 +12,6 @@ const NAV = [
   { label: 'Країни', href: '#channels' },
   { label: 'Як працюємо', href: '#process' },
   { label: 'Послуги', href: '#vacancies' },
-  { label: 'Відгуки', href: '#reviews' },
   { label: 'Контакти', href: '#contacts' },
 ];
 
