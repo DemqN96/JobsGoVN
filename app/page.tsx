@@ -11,6 +11,7 @@ import WhyUs from '@/components/WhyUs';
 import Services from '@/components/Services';
 import Process from '@/components/Process';
 import Team from '@/components/Team';
+import Story from '@/components/Story';
 import Socials from '@/components/Socials';
 import LeadModal from '@/components/LeadModal';
 import Footer from '@/components/Footer';
@@ -47,7 +48,9 @@ export default function Home() {
         <Reveal><Process /></Reveal>
         {/* 9. Команда */}
         <Reveal><Team /></Reveal>
-        {/* 10. Соцмережі */}
+        {/* 10. Наша історія */}
+        <Reveal><Story /></Reveal>
+        {/* 11. Соцмережі */}
         <Reveal><Socials /></Reveal>
 
         <section className="py-16 bg-white border-t border-gray-100">
