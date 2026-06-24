@@ -58,13 +58,14 @@ export default function Reviews() {
   }, [active, close, prev, next]);
 
   return (
-    <section id="reviews" className="py-20 bg-[#f8f9fb]">
+    <section id="reviews" className="py-16 sm:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] mb-3">
+          <p className="eyebrow mb-3">Відгуки</p>
+          <h2 className="font-display font-extrabold text-ink text-3xl sm:text-4xl lg:text-5xl mb-4">
             Відгуки наших клієнтів
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
+          <p className="text-ink-soft max-w-xl mx-auto">
             Реальні відгуки людей, яких ми працевлаштували в Європі.
             Проведіть, щоб погортати, натисніть на фото — щоб збільшити.
           </p>

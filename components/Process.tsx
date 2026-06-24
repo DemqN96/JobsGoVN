@@ -33,24 +33,33 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-20 bg-[#f5f7fa]">
+    <section id="process" className="py-16 sm:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] mb-3">
-          Як ми працюємо
-        </h2>
-        <p className="text-gray-500 mb-12 max-w-xl">
-          Прозорий процес без прихованих кроків — ви завжди знаєте, що відбувається.
-        </p>
+        <div className="text-center mb-12">
+          <p className="eyebrow mb-3">Процес</p>
+          <h2 className="font-display font-extrabold text-ink text-3xl sm:text-4xl lg:text-5xl mb-4">
+            Як ми працюємо
+          </h2>
+          <p className="text-ink-soft max-w-xl mx-auto">
+            Прозорий процес без прихованих кроків — ви завжди знаєте, що відбувається.
+          </p>
+        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {STEPS.map((step) => (
             <div
               key={step.num}
-              className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm"
+              className="group relative bg-mist hover:bg-ink rounded-3xl p-7 transition-colors duration-300"
             >
-              <span className="text-4xl font-bold text-[#c9870a]/30">{step.num}</span>
-              <h3 className="text-[#1a3057] font-bold text-lg mt-2 mb-2">{step.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
+              <span className="font-display text-5xl font-extrabold text-blue/15 group-hover:text-yellow/40 transition-colors">
+                {step.num}
+              </span>
+              <h3 className="font-display text-ink group-hover:text-white font-extrabold text-lg mt-3 mb-2 transition-colors">
+                {step.title}
+              </h3>
+              <p className="text-ink-soft group-hover:text-white/70 text-sm leading-relaxed transition-colors">
+                {step.desc}
+              </p>
             </div>
           ))}
         </div>

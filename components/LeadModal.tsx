@@ -62,20 +62,20 @@ export default function LeadModal({ open, onClose }: Props) {
         {status === 'success' ? (
           <div className="text-center py-8">
             <div className="text-5xl mb-4">✅</div>
-            <h3 className="text-xl font-bold text-[#1a3057] mb-2">Заявку прийнято!</h3>
+            <h3 className="text-xl font-bold text-ink mb-2">Заявку прийнято!</h3>
             <p className="text-gray-500">
               Менеджер зв&apos;яжеться з вами протягом робочого дня.
             </p>
             <button
               onClick={onClose}
-              className="mt-6 bg-[#c9870a] text-white font-semibold px-8 py-3 rounded-md hover:bg-[#e09f1a] transition-colors"
+              className="mt-6 bg-yellow text-ink font-semibold px-8 py-3 rounded-md hover:bg-yellow-dark transition-colors"
             >
               Закрити
             </button>
           </div>
         ) : (
           <>
-            <h2 className="text-2xl font-bold text-[#1a3057] mb-2">Підібрати вакансію</h2>
+            <h2 className="text-2xl font-bold text-ink mb-2">Підібрати вакансію</h2>
             <p className="text-gray-500 text-sm mb-6">
               Залиште заявку — менеджер передзвонить протягом робочого дня.
             </p>
@@ -93,7 +93,7 @@ export default function LeadModal({ open, onClose }: Props) {
                 className="absolute left-[-9999px] w-px h-px opacity-0"
               />
               <div>
-                <label className="block text-sm font-medium text-[#1a3057] mb-1.5">
+                <label className="block text-sm font-medium text-ink mb-1.5">
                   Прізвище та ім&apos;я <span className="text-red-400">*</span>
                 </label>
                 <input
@@ -102,12 +102,12 @@ export default function LeadModal({ open, onClose }: Props) {
                   placeholder="Прізвище та ім'я"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-[#1a3057] placeholder-gray-300 focus:outline-none focus:border-[#c9870a] transition-colors text-sm"
+                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-ink placeholder-gray-300 focus:outline-none focus:border-blue transition-colors text-sm"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#1a3057] mb-1.5">
+                <label className="block text-sm font-medium text-ink mb-1.5">
                   Телефон <span className="text-red-400">*</span>
                 </label>
                 <input
@@ -116,12 +116,12 @@ export default function LeadModal({ open, onClose }: Props) {
                   placeholder="+38 (0XX) XXX-XX-XX"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-[#1a3057] placeholder-gray-300 focus:outline-none focus:border-[#c9870a] transition-colors text-sm"
+                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-ink placeholder-gray-300 focus:outline-none focus:border-blue transition-colors text-sm"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#1a3057] mb-1.5">
+                <label className="block text-sm font-medium text-ink mb-1.5">
                   Бажана країна <span className="text-gray-400 font-normal">(необов&apos;язково)</span>
                 </label>
                 <input
@@ -129,12 +129,12 @@ export default function LeadModal({ open, onClose }: Props) {
                   placeholder="Польща, Чехія, Німеччина..."
                   value={form.country}
                   onChange={(e) => setForm({ ...form, country: e.target.value })}
-                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-[#1a3057] placeholder-gray-300 focus:outline-none focus:border-[#c9870a] transition-colors text-sm"
+                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-ink placeholder-gray-300 focus:outline-none focus:border-blue transition-colors text-sm"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#1a3057] mb-1.5">
+                <label className="block text-sm font-medium text-ink mb-1.5">
                   Коментар <span className="text-gray-400 font-normal">(необов&apos;язково)</span>
                 </label>
                 <textarea
@@ -142,7 +142,7 @@ export default function LeadModal({ open, onClose }: Props) {
                   rows={3}
                   value={form.comment}
                   onChange={(e) => setForm({ ...form, comment: e.target.value })}
-                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-[#1a3057] placeholder-gray-300 focus:outline-none focus:border-[#c9870a] transition-colors text-sm resize-none"
+                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-ink placeholder-gray-300 focus:outline-none focus:border-blue transition-colors text-sm resize-none"
                 />
               </div>
 
@@ -153,7 +153,7 @@ export default function LeadModal({ open, onClose }: Props) {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full bg-[#c9870a] hover:bg-[#e09f1a] disabled:opacity-60 text-white font-bold py-4 rounded-md transition-colors"
+                className="w-full bg-yellow hover:bg-yellow-dark disabled:opacity-60 text-ink font-bold py-4 rounded-md transition-colors"
               >
                 {status === 'loading' ? 'Відправляємо...' : 'Відправити заявку'}
               </button>

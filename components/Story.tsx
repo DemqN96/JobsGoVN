@@ -24,21 +24,21 @@ const ITEMS: Item[] = [
           напрямки на три окремі акаунти:
         </p>
         <p>
-          <strong className="text-[#1a3057]">OpenVisa</strong> — займається
+          <strong className="text-ink">OpenVisa</strong> — займається
           виключно оформленням віз. Сюди входить оформлення віз до конкретних
           країн: Велика Британія, США, Канада, Японія, Корея, Китай, країни
           Шенгенської зони, Марокко та інші напрямки. Весь контент на цьому
           акаунті стосуватиметься тільки візової тематики.
         </p>
         <p>
-          <strong className="text-[#1a3057]">Jobs Go</strong> — окремий акаунт,
+          <strong className="text-ink">Jobs Go</strong> — окремий акаунт,
           повністю присвячений працевлаштуванню за кордоном, зокрема в
           Нідерландах, Німеччині та інших країнах ЄС. Тут публікуються вакансії,
           умови роботи, інформація про роботодавців і все, що стосується саме
           працевлаштування.
         </p>
         <p>
-          <strong className="text-[#1a3057]">Deportations OpenVisa</strong> —
+          <strong className="text-ink">Deportations OpenVisa</strong> —
           окремий акаунт для тих, хто стикнувся з питанням депортації або ризиком
           втрати легального статусу. Тут ми публікуємо інформацію про те, що
           робити в разі загрози депортації, як перевірити себе в базі SIS, та
@@ -98,7 +98,7 @@ const ITEMS: Item[] = [
           депортацій та легалізації статусу. Так ви точно не пропустите жодного
           оновлення.
         </p>
-        <p className="font-semibold text-[#1a3057]">
+        <p className="font-semibold text-ink">
           Дякуємо за розуміння і за те, що залишаєтеся з нами!
         </p>
       </>
@@ -110,10 +110,10 @@ export default function Story() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="story" className="py-14 sm:py-20 bg-[#f8f9fb]">
+    <section id="story" className="py-14 sm:py-20 bg-mist">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold text-ink mb-3">
             Наша історія
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
@@ -135,14 +135,14 @@ export default function Story() {
                   className="w-full flex items-start gap-4 text-left px-5 sm:px-6 py-5"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-2xl font-bold text-[#c9870a] leading-none shrink-0">
+                  <span className="text-2xl font-bold text-blue leading-none shrink-0">
                     {i + 1}
                   </span>
-                  <span className="flex-1 font-bold text-[#1a3057] leading-snug">
+                  <span className="flex-1 font-bold text-ink leading-snug">
                     {item.q}
                   </span>
                   <span
-                    className={`shrink-0 text-[#1a3057] transition-transform duration-300 ${
+                    className={`shrink-0 text-ink transition-transform duration-300 ${
                       isOpen ? 'rotate-180' : ''
                     }`}
                     aria-hidden="true"

@@ -9,14 +9,14 @@ const NAV = [
 
 export default function Footer() {
   return (
-    <footer id="contacts" className="bg-[#1a3057] text-white/60 pt-14 pb-8">
+    <footer className="bg-ink text-white/60 pt-14 pb-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Image src="/logo.png" alt="Jobs Go VN" width={44} height={44} className="brightness-0 invert opacity-90" />
               <span className="font-bold text-white text-lg">
-                Jobs Go <span className="text-[#c9870a]">VN</span>
+                Jobs Go <span className="text-yellow">VN</span>
               </span>
             </div>
             <p className="text-sm leading-relaxed mb-6">
@@ -24,7 +24,7 @@ export default function Footer() {
               Підбір вакансій, документи, повний супровід.
             </p>
             <p className="text-xs text-white/40">
-              Партнер: <a href="https://open-visa.online" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#c9870a] transition-colors">Open Visa</a> — оформлення віз та допомога з депортаціями.
+              Партнер: <a href="https://open-visa.online" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-yellow transition-colors">Open Visa</a> — оформлення віз та допомога з депортаціями.
             </p>
           </div>
 
@@ -33,11 +33,11 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {NAV.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="hover:text-[#c9870a] transition-colors">{item.label}</a>
+                  <a href={item.href} className="hover:text-yellow transition-colors">{item.label}</a>
                 </li>
               ))}
               <li>
-                <a href="https://t.me/robootaeu" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9870a] transition-colors">
+                <a href="https://t.me/robootaeu" target="_blank" rel="noopener noreferrer" className="hover:text-yellow transition-colors">
                   Telegram-канал
                 </a>
               </li>
@@ -48,12 +48,12 @@ export default function Footer() {
             <p className="text-white font-semibold mb-4">Контакти</p>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="tel:+380970774947" className="hover:text-[#c9870a] transition-colors">
+                <a href="tel:+380970774947" className="hover:text-yellow transition-colors">
                   📞 +38 (097) 077-49-47
                 </a>
               </li>
               <li>
-                <a href="mailto:ceo.openvisa@gmail.com" className="hover:text-[#c9870a] transition-colors">
+                <a href="mailto:ceo.openvisa@gmail.com" className="hover:text-yellow transition-colors">
                   ✉ ceo.openvisa@gmail.com
                 </a>
               </li>
@@ -62,7 +62,7 @@ export default function Footer() {
                   href="https://maps.app.goo.gl/PWrf6rG5sXb2XWrU6"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#c9870a] transition-colors"
+                  className="hover:text-yellow transition-colors"
                 >
                   м. Вінниця, пл. Гагаріна, 2<br />
                   ТЦ «Вінницький універмаг»

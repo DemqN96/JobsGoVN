@@ -41,10 +41,10 @@ const GROUP_PORTRAIT = [
 
 export default function Team() {
   return (
-    <section id="team" className="py-20 bg-[#f8f9fb]">
+    <section id="team" className="py-20 bg-mist">
       <div className="max-w-6xl mx-auto px-4 sm:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold text-ink mb-3">
             Наша команда
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">

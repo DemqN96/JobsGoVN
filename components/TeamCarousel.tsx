@@ -18,7 +18,7 @@ function initials(name: string) {
 function Card({ m }: { m: Member }) {
   return (
     <div className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 select-none">
-      <div className="relative bg-[#f5f7fa] pointer-events-none" style={{ aspectRatio: '3/4' }}>
+      <div className="relative bg-mist pointer-events-none" style={{ aspectRatio: '3/4' }}>
         {m.photo ? (
           <Image
             src={m.photo}
@@ -29,7 +29,7 @@ function Card({ m }: { m: Member }) {
             className="object-cover object-top"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center text-[#1a3057]/20 text-5xl font-bold">
+          <div className="absolute inset-0 flex items-center justify-center text-ink/20 text-5xl font-bold">
             {initials(m.name)}
           </div>
         )}
@@ -37,17 +37,17 @@ function Card({ m }: { m: Member }) {
       <div className="p-4 pointer-events-none">
         {m.name ? (
           <>
-            <h3 className="font-bold text-[#1a3057] leading-tight">{m.name}</h3>
+            <h3 className="font-bold text-ink leading-tight">{m.name}</h3>
             <p className="text-sm text-gray-400 mt-1 leading-snug">{m.role}</p>
           </>
         ) : (
-          <h3 className="font-bold text-[#1a3057] leading-snug">{m.role}</h3>
+          <h3 className="font-bold text-ink leading-snug">{m.role}</h3>
         )}
         {m.email && (
-          <p className="block mt-3 text-xs text-[#c9870a] truncate">✉ {m.email}</p>
+          <p className="block mt-3 text-xs text-blue truncate">✉ {m.email}</p>
         )}
         {m.phone && (
-          <p className="block mt-3 text-xs text-[#c9870a]">📞 {m.phone}</p>
+          <p className="block mt-3 text-xs text-blue">📞 {m.phone}</p>
         )}
       </div>
     </div>

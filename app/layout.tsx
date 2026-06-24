@@ -1,5 +1,21 @@
 import type { Metadata } from "next";
+import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
+
+// Заголовки — геометричний гротеск з кирилицею (заміна Halvar Breitschrift), текст — Inter.
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
+  weight: ["600", "700", "800", "900"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Jobs Go VN — Робота в Європі. Офіційне працевлаштування.",
@@ -15,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="uk">
+    <html lang="uk" className={`${montserrat.variable} ${inter.variable}`}>
       <body>{children}</body>
     </html>
   );

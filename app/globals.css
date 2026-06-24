@@ -3,20 +3,41 @@
 @source "../components/**/*.{ts,tsx}";
 
 :root {
-  --navy: #1a3057;
-  --navy-dark: #0f1f3a;
-  --gold: #c9870a;
-  --gold-light: #e09f1a;
+  /* Палітра у стилі mavista */
+  --yellow: #fbd713;
+  --yellow-dark: #f5c61d;
+  --blue: #224191;
+  --blue-dark: #1a3473;
+  --ink: #242732;
+  --ink-soft: #424753;
+  --line: #dcdfe6;
+  --mist: #f5f6fb;
   --white: #ffffff;
-  --gray: #6b7280;
-  --gray-light: #f5f7fa;
+
+  /* legacy-аліаси (щоб старі класи navy/gold не ламались) */
+  --navy: #242732;
+  --navy-dark: #1a3473;
+  --gold: #fbd713;
+  --gold-light: #f5c61d;
 }
 
 @theme inline {
+  --color-yellow: var(--yellow);
+  --color-yellow-dark: var(--yellow-dark);
+  --color-blue: var(--blue);
+  --color-blue-dark: var(--blue-dark);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-mist: var(--mist);
+
   --color-navy: var(--navy);
   --color-navy-dark: var(--navy-dark);
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
+
+  --font-display: var(--font-display), "Montserrat", sans-serif;
+  --font-body: var(--font-body), "Inter", Arial, sans-serif;
 }
 
 * {
@@ -29,7 +50,27 @@ html {
 
 body {
   background: var(--white);
-  color: var(--navy);
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  font-family: var(--font-body), "Inter", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Заголовки — широкий жирний гротеск */
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-display), "Montserrat", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Утиліта для секційних "надзаголовків" як у mavista (дрібний жовтий лейбл) */
+.eyebrow {
+  font-family: var(--font-display), "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--blue);
 }

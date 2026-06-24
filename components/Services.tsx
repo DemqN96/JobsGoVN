@@ -72,14 +72,21 @@ const SERVICES = [
   },
 ];
 
+const TABS = [
+  { id: 'all', label: 'Усі країни' },
+  ...SERVICES.map((s) => ({ id: s.id, label: s.title.replace(/^Робота (в|у) /, '') })),
+];
+
 export default function Services() {
   const openModal = () => window.dispatchEvent(new CustomEvent('open-lead-modal'));
+  const [tab, setTab] = useState('all');
   const [detailsId, setDetailsId] = useState<string | null>(null);
   const [photo, setPhoto] = useState<string | null>(null);
 
   const active = SERVICES.find((s) => s.id === detailsId);
   const vacancies: Vacancy[] = detailsId ? VACANCY_DETAILS[detailsId] ?? [] : [];
   const photos: string[] = detailsId ? VACANCY_PHOTOS[detailsId] ?? [] : [];
+  const shown = tab === 'all' ? SERVICES : SERVICES.filter((s) => s.id === tab);
 
   useEffect(() => {
     if (!detailsId) return;
@@ -97,48 +104,64 @@ export default function Services() {
   }, [detailsId, photo]);
 
   return (
-    <section id="vacancies" className="py-14 sm:py-20 bg-white">
+    <section id="vacancies" className="py-16 sm:py-24 bg-mist">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057]">
-            <span className="bg-[#c9870a] text-white px-2 rounded mr-2">Наші</span>послуги
+        <div className="text-center mb-10">
+          <p className="eyebrow mb-3">Напрямки</p>
+          <h2 className="font-display font-extrabold text-ink text-3xl sm:text-4xl lg:text-5xl">
+            Актуальні послуги
           </h2>
         </div>
 
+        {/* Таби країн */}
+        <div className="flex gap-2 overflow-x-auto pb-3 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:justify-center">
+          {TABS.map((t) => (
+            <button
+              key={t.id}
+              onClick={() => setTab(t.id)}
+              className={`shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold transition-colors ${
+                tab === t.id
+                  ? 'bg-ink text-white'
+                  : 'bg-white text-ink-soft border border-line hover:border-ink'
+              }`}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {SERVICES.map((s) => (
+          {shown.map((s) => (
             <div
               key={s.title}
               id={`service-${s.id}`}
-              className={`scroll-mt-24 flex flex-col rounded-2xl border p-6 sm:p-7 ${
+              className={`scroll-mt-28 flex flex-col rounded-3xl p-6 sm:p-7 transition-all ${
                 s.highlight
-                  ? 'bg-[#1a3057] border-[#1a3057] text-white'
-                  : 'bg-white border-gray-100 hover:shadow-md'
-              } transition-all`}
+                  ? 'bg-blue text-white'
+                  : 'bg-white border border-line hover:shadow-lg'
+              }`}
             >
               <div className="text-5xl mb-4">{s.flag}</div>
-              <h3 className={`text-xl font-bold mb-2 ${s.highlight ? 'text-white' : 'text-[#1a3057]'}`}>
+              <h3 className={`font-display text-xl font-extrabold mb-3 ${s.highlight ? 'text-white' : 'text-ink'}`}>
                 {s.title}
               </h3>
               <div
-                className={`inline-flex items-center self-start gap-1 px-3 py-1 rounded-full text-sm font-bold mb-3 ${
-                  s.highlight ? 'bg-white text-[#1a3057]' : 'bg-[#c9870a]/10 text-[#c9870a]'
+                className={`inline-flex items-center self-start px-3 py-1 rounded-full text-sm font-bold mb-3 ${
+                  s.highlight ? 'bg-yellow text-ink' : 'bg-yellow/20 text-blue'
                 }`}
               >
                 від {s.salary}/міс
               </div>
-              <p className={`text-sm mb-3 ${s.highlight ? 'text-white/70' : 'text-gray-400'}`}>
+              <p className={`text-sm mb-3 ${s.highlight ? 'text-white/70' : 'text-ink-soft/60'}`}>
                 {s.types}
               </p>
-              <p className={`text-sm leading-relaxed flex-1 ${s.highlight ? 'text-white/90' : 'text-gray-600'}`}>
+              <p className={`text-sm leading-relaxed flex-1 ${s.highlight ? 'text-white/90' : 'text-ink-soft'}`}>
                 {s.desc}
               </p>
               <button
                 onClick={() => setDetailsId(s.id)}
-                className={`mt-5 inline-flex items-center gap-1 self-start text-sm font-semibold transition-colors ${
-                  s.highlight
-                    ? 'text-white hover:text-white/70'
-                    : 'text-[#c9870a] hover:text-[#1a3057]'
+                className={`mt-5 inline-flex items-center gap-1 self-start text-sm font-bold transition-colors ${
+                  s.highlight ? 'text-yellow hover:text-white' : 'text-blue hover:text-ink'
                 }`}
               >
                 Детальніше про вакансії
@@ -146,10 +169,10 @@ export default function Services() {
               </button>
               <button
                 onClick={openModal}
-                className={`mt-3 w-full py-3 rounded-xl font-semibold text-sm transition-colors ${
+                className={`mt-4 w-full py-3 rounded-full font-bold text-sm transition-colors ${
                   s.highlight
-                    ? 'bg-white text-[#1a3057] hover:bg-gray-100'
-                    : 'bg-gray-100 text-[#1a3057] hover:bg-[#1a3057] hover:text-white'
+                    ? 'bg-yellow text-ink hover:bg-yellow-dark'
+                    : 'bg-ink text-white hover:bg-blue'
                 }`}
               >
                 Отримати консультацію
@@ -166,17 +189,17 @@ export default function Services() {
           onClick={() => setDetailsId(null)}
         >
           <div
-            className="bg-white w-full sm:max-w-2xl max-h-[88vh] sm:rounded-2xl rounded-t-2xl overflow-hidden flex flex-col shadow-xl"
+            className="bg-white w-full sm:max-w-2xl max-h-[88vh] sm:rounded-3xl rounded-t-3xl overflow-hidden flex flex-col shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between gap-4 px-6 py-5 border-b border-gray-100">
-              <h3 className="text-xl font-bold text-[#1a3057] flex items-center gap-2">
+            <div className="flex items-center justify-between gap-4 px-6 py-5 border-b border-line">
+              <h3 className="font-display text-xl font-extrabold text-ink flex items-center gap-2">
                 <span className="text-2xl">{active.flag}</span>
                 {active.title}
               </h3>
               <button
                 onClick={() => setDetailsId(null)}
-                className="text-gray-400 hover:text-[#1a3057] text-2xl leading-none w-8 h-8 flex items-center justify-center shrink-0"
+                className="text-ink-soft/50 hover:text-ink text-2xl leading-none w-8 h-8 flex items-center justify-center shrink-0"
                 aria-label="Закрити"
               >
                 ×
@@ -186,7 +209,7 @@ export default function Services() {
             <div className="overflow-y-auto px-6 py-5 space-y-5">
               {photos.length > 0 && (
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-2">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-ink-soft/50 mb-2">
                     Фото умов
                   </p>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -194,7 +217,7 @@ export default function Services() {
                       <button
                         key={src}
                         onClick={() => setPhoto(src)}
-                        className="relative aspect-[4/3] overflow-hidden rounded-lg border border-gray-200 bg-gray-50"
+                        className="relative aspect-[4/3] overflow-hidden rounded-xl border border-line bg-mist"
                       >
                         <Image
                           src={src}
@@ -209,16 +232,16 @@ export default function Services() {
                 </div>
               )}
               {vacancies.length === 0 && (
-                <p className="text-gray-500 text-sm">
+                <p className="text-ink-soft text-sm">
                   Деталі уточнюйте у менеджера — натисніть «Отримати консультацію».
                 </p>
               )}
               {vacancies.map((v, i) => (
                 <div
                   key={i}
-                  className="rounded-xl border border-gray-100 bg-[#f8f9fb] p-4 sm:p-5"
+                  className="rounded-2xl border border-line bg-mist p-4 sm:p-5"
                 >
-                  <p className="font-bold text-[#1a3057] mb-3">{v.role}</p>
+                  <p className="font-display font-extrabold text-ink mb-3">{v.role}</p>
                   <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
                     {v.city && <Row label="Місто" value={v.city} />}
                     {v.candidates && <Row label="Кандидати" value={v.candidates} />}
@@ -232,13 +255,13 @@ export default function Services() {
               ))}
             </div>
 
-            <div className="px-6 py-4 border-t border-gray-100">
+            <div className="px-6 py-4 border-t border-line">
               <button
                 onClick={() => {
                   setDetailsId(null);
                   openModal();
                 }}
-                className="w-full py-3 rounded-xl font-semibold text-sm bg-[#c9870a] text-white hover:bg-[#e09f1a] transition-colors"
+                className="w-full py-3 rounded-full font-bold text-sm bg-yellow text-ink hover:bg-yellow-dark transition-colors"
               >
                 Залишити заявку на цю вакансію
               </button>
@@ -286,8 +309,8 @@ function Row({
 }) {
   return (
     <div className={full ? 'sm:col-span-2' : ''}>
-      <dt className="text-gray-400 text-xs">{label}</dt>
-      <dd className="text-[#1a3057]">{value}</dd>
+      <dt className="text-ink-soft/50 text-xs">{label}</dt>
+      <dd className="text-ink">{value}</dd>
     </div>
   );
 }

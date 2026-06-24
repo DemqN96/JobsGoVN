@@ -1,73 +1,54 @@
-const REASONS = [
-  {
-    num: '1',
-    icon: '♟️',
-    text: 'Офіційний контракт — без сірих схем, прихованих умов і передоплат за «місця».',
-  },
-  {
-    num: '2',
-    icon: '💼',
-    text: 'Підбираємо вакансії під ваш досвід та очікування — не надсилаємо все підряд.',
-  },
-  {
-    num: '3',
-    icon: '📖',
-    text: 'Говоримо чесно: якщо вакансія не підходить — скажемо одразу, а не після виїзду.',
-  },
-  {
-    num: '4',
-    icon: '💬',
-    text: 'Повний пакет документів — від резюме до трудової угоди та дозволу на роботу.',
-  },
-  {
-    num: '5',
-    icon: '✏️',
-    text: 'Координуємо виїзд: логістика, житло, умови праці — всі деталі до першого дня роботи.',
-  },
-  {
-    num: '6',
-    highlight: true,
-    icon: '🔥',
-    text: 'На зв\'язку протягом усього процесу — від першого дзвінка до виходу на роботу.',
-  },
+'use client';
+
+const ADVANTAGES = [
+  'Безкоштовна консультація спеціалістів та підбір вакансії під ваш профіль',
+  'Офіційний контракт — без сірих схем, прихованих умов і передоплат за «місця»',
+  'Підготовка повного пакета документів — від резюме до дозволу на роботу',
+  'Постійна підтримка за кордоном 24/7 — до виходу на роботу й далі',
 ];
 
 export default function WhyUs() {
   return (
-    <section className="py-14 sm:py-20 bg-[#f8f9fb]">
+    <section className="py-16 sm:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] text-center mb-12">
-          Чому варто звернутись до нас?
-        </h2>
-
-        <div className="grid sm:grid-cols-2 gap-4 mb-10">
-          {REASONS.map((r) => (
-            <div
-              key={r.num}
-              className={`flex items-start gap-4 px-6 py-5 rounded-2xl border ${
-                r.highlight
-                  ? 'bg-[#c9870a] border-[#c9870a] text-white'
-                  : 'bg-white border-gray-100 text-gray-700'
-              }`}
-            >
-              <span className={`text-2xl font-black shrink-0 ${r.highlight ? 'text-white/70' : 'text-[#1a3057]/20'}`}>
-                {r.num}
-              </span>
-              <div className="flex-1">
-                <p className={`text-sm leading-relaxed ${r.highlight ? 'text-white' : ''}`}>{r.text}</p>
-              </div>
-              <span className="text-2xl shrink-0">{r.icon}</span>
+        <div className="rounded-[2rem] bg-ink text-white overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 p-8 sm:p-12 lg:p-14">
+            {/* Заголовок-окупність */}
+            <div className="flex flex-col justify-center">
+              <p className="eyebrow text-yellow mb-4">Чому ми</p>
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-5">
+                Вартість послуг окупиться вже за{' '}
+                <span className="text-yellow">10 робочих днів</span>
+              </h2>
+              <p className="text-white/70 text-lg mb-8">
+                Все решта — ваші зароблені кошти. Ми зацікавлені, щоб ви швидко
+                вийшли на роботу та залишились задоволені.
+              </p>
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('open-lead-modal'))}
+                className="self-start bg-yellow hover:bg-yellow-dark text-ink font-bold px-8 py-4 rounded-full transition-colors"
+              >
+                Отримати консультацію
+              </button>
             </div>
-          ))}
-        </div>
 
-        <div className="text-center">
-          <button
-            onClick={() => window.dispatchEvent(new CustomEvent('open-lead-modal'))}
-            className="bg-[#c9870a] hover:bg-[#e09f1a] text-white font-bold px-10 py-4 rounded-md transition-colors"
-          >
-            Отримати консультацію
-          </button>
+            {/* Переваги */}
+            <div className="lg:border-l lg:border-white/10 lg:pl-12 flex flex-col justify-center">
+              <p className="font-display font-extrabold text-xl mb-6">
+                Переваги співпраці з нами:
+              </p>
+              <ul className="space-y-5">
+                {ADVANTAGES.map((a, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <span className="shrink-0 mt-0.5 w-7 h-7 rounded-full bg-yellow text-ink font-bold text-sm flex items-center justify-center">
+                      ✓
+                    </span>
+                    <span className="text-white/85 leading-relaxed">{a}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>

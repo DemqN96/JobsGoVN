@@ -10,6 +10,7 @@ import About from '@/components/About';
 import WhyUs from '@/components/WhyUs';
 import Services from '@/components/Services';
 import Process from '@/components/Process';
+import HotVacancies from '@/components/HotVacancies';
 import Team from '@/components/Team';
 import Story from '@/components/Story';
 import Socials from '@/components/Socials';
@@ -32,41 +33,55 @@ export default function Home() {
       <main>
         {/* 1. Hero */}
         <Hero onConsult={openModal} />
-        {/* 2. Stats */}
-        <Reveal><Stats /></Reveal>
-        {/* 3. Відгуки */}
-        <Reveal><Reviews /></Reveal>
-        {/* 4. Країни */}
-        <Reveal><Countries /></Reveal>
-        {/* 5. Про нас */}
+        {/* 2. Про агентство */}
         <Reveal><About /></Reveal>
-        {/* 6. Чому варто */}
-        <Reveal><WhyUs /></Reveal>
-        {/* 7. Наші послуги */}
+        {/* 3. Лічильники */}
+        <Reveal><Stats /></Reveal>
+        {/* 4. Актуальні послуги (таби по країнах) */}
         <Reveal><Services /></Reveal>
-        {/* 8. Як ми працюємо */}
+        {/* 5. Як ми працюємо */}
         <Reveal><Process /></Reveal>
-        {/* 9. Команда */}
+        {/* 6. Гарячі вакансії */}
+        <Reveal><HotVacancies /></Reveal>
+        {/* 7. Переваги / окупність */}
+        <Reveal><WhyUs /></Reveal>
+        {/* 8. Країни */}
+        <Reveal><Countries /></Reveal>
+        {/* 9. Відгуки */}
+        <Reveal><Reviews /></Reveal>
+        {/* 10. Команда */}
         <Reveal><Team /></Reveal>
-        {/* 10. Наша історія */}
+        {/* 11. Наша історія */}
         <Reveal><Story /></Reveal>
-        {/* 11. Соцмережі */}
+        {/* 12. Соцмережі */}
         <Reveal><Socials /></Reveal>
 
-        <section className="py-16 bg-white border-t border-gray-100">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] mb-4">
+        {/* 13. Заявка / контакти */}
+        <section id="contacts" className="relative bg-ink text-white overflow-hidden py-20 sm:py-28">
+          <div className="pointer-events-none absolute -top-20 -right-20 w-80 h-80 rounded-full bg-yellow/10 blur-3xl" />
+          <div className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
+            <p className="eyebrow text-yellow mb-4">Залишились запитання?</p>
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl mb-5">
               Готові почати працювати в Європі?
             </h2>
-            <p className="text-gray-500 mb-8">
-              Залиште заявку — перша консультація безкоштовна.
+            <p className="text-white/70 text-lg mb-9">
+              Залиште заявку — менеджер зателефонує найближчим часом.
+              Перша консультація безкоштовна.
             </p>
-            <button
-              onClick={openModal}
-              className="bg-[#c9870a] hover:bg-[#e09f1a] text-white font-bold px-10 py-4 rounded-md text-base transition-colors"
-            >
-              Підібрати вакансію
-            </button>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <button
+                onClick={openModal}
+                className="bg-yellow hover:bg-yellow-dark text-ink font-bold px-9 py-4 rounded-full text-base transition-colors"
+              >
+                Залишити заявку
+              </button>
+              <a
+                href="tel:+380970774947"
+                className="inline-flex items-center gap-2 border border-white/25 hover:border-white/60 text-white font-semibold px-7 py-4 rounded-full transition-colors"
+              >
+                +38 (097) 077-49-47
+              </a>
+            </div>
           </div>
         </section>
       </main>

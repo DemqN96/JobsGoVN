@@ -18,9 +18,9 @@ export default function Countries() {
     if (!el) return;
     el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     // короткий акцент на потрібній картці
-    el.classList.add('ring-2', 'ring-[#c9870a]', 'ring-offset-2');
+    el.classList.add('ring-2', 'ring-blue', 'ring-offset-2');
     setTimeout(
-      () => el.classList.remove('ring-2', 'ring-[#c9870a]', 'ring-offset-2'),
+      () => el.classList.remove('ring-2', 'ring-blue', 'ring-offset-2'),
       1600
     );
   };
@@ -29,7 +29,7 @@ export default function Countries() {
     <section id="channels" className="py-14 sm:py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold text-ink mb-3">
             Країни, де ми працевлаштовуємо
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
@@ -43,7 +43,7 @@ export default function Countries() {
             <button
               key={c.name}
               onClick={() => goToService(c.target)}
-              className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-gray-200 text-[#1a3057] font-semibold text-sm hover:border-[#1a3057] hover:bg-[#1a3057] hover:text-white transition-all cursor-pointer text-left"
+              className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-gray-200 text-ink font-semibold text-sm hover:border-ink hover:bg-ink hover:text-white transition-all cursor-pointer text-left"
             >
               <span className="text-2xl">{c.flag}</span>
               {c.name}
@@ -51,14 +51,14 @@ export default function Countries() {
           ))}
         </div>
 
-        <div className="bg-[#f8f9fb] rounded-xl px-6 py-4 text-center text-gray-500 text-sm mb-10">
+        <div className="bg-mist rounded-xl px-6 py-4 text-center text-gray-500 text-sm mb-10">
           Не бачите потрібну країну? Напишіть нам — можливо ми вже маємо вакансії в цьому напрямку
         </div>
 
         <div className="text-center">
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-lead-modal'))}
-            className="bg-[#c9870a] hover:bg-[#e09f1a] text-white font-bold px-10 py-4 rounded-md transition-colors"
+            className="bg-yellow hover:bg-yellow-dark text-ink font-bold px-10 py-4 rounded-md transition-colors"
           >
             Підібрати вакансію
           </button>

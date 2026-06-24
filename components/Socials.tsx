@@ -24,12 +24,13 @@ const SOCIALS = [
 
 export default function Socials() {
   return (
-    <section className="py-20 bg-[#f5f7fa]">
+    <section className="py-16 sm:py-24 bg-mist">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] mb-3">
-          Ми в соцмережах
+        <p className="eyebrow mb-3">Соцмережі</p>
+        <h2 className="font-display font-extrabold text-ink text-3xl sm:text-4xl lg:text-5xl mb-3">
+          Дізнавайтесь про нові вакансії першими
         </h2>
-        <p className="text-gray-500 mb-12 max-w-2xl">
+        <p className="text-ink-soft mb-12 max-w-2xl">
           Закулісся роботи, історії наших кандидатів та реальні умови у країнах ЄС.
         </p>
 
@@ -40,16 +41,16 @@ export default function Socials() {
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4"
+              className="group bg-white rounded-xl p-6 border border-line shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4"
             >
-              <div className="w-12 h-12 rounded-full bg-[#1a3057] text-white flex items-center justify-center group-hover:bg-[#c9870a] transition-colors">
+              <div className="w-12 h-12 rounded-full bg-ink text-white flex items-center justify-center group-hover:bg-yellow group-hover:text-ink transition-colors">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
                   <path d={s.iconPath} />
                 </svg>
               </div>
               <div className="min-w-0">
-                <div className="font-bold text-[#1a3057]">{s.name}</div>
-                <div className="text-sm text-gray-500 truncate">{s.handle}</div>
+                <div className="font-bold text-ink">{s.name}</div>
+                <div className="text-sm text-ink-soft truncate">{s.handle}</div>
               </div>
             </a>
           ))}
