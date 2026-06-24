@@ -1,18 +1,30 @@
 const COUNTRIES = [
-  { flag: '🇩🇪', name: 'Німеччина' },
-  { flag: '🇳🇱', name: 'Нідерланди' },
-  { flag: '🇫🇷', name: 'Франція' },
-  { flag: '🇵🇱', name: 'Польща' },
-  { flag: '🇨🇿', name: 'Чехія' },
-  { flag: '🇮🇹', name: 'Італія' },
-  { flag: '🇬🇷', name: 'Греція' },
-  { flag: '🇫🇮', name: 'Фінляндія' },
-  { flag: '🇸🇪', name: 'Швеція' },
-  { flag: '🇦🇹', name: 'Австрія' },
-  { flag: '🇧🇪', name: 'Бельгія' },
+  { flag: '🇩🇪', name: 'Німеччина', target: 'de' },
+  { flag: '🇳🇱', name: 'Нідерланди', target: 'nl' },
+  { flag: '🇫🇷', name: 'Франція', target: 'fr' },
+  { flag: '🇵🇱', name: 'Польща', target: 'pl-cz' },
+  { flag: '🇨🇿', name: 'Чехія', target: 'pl-cz' },
+  { flag: '🇮🇹', name: 'Італія', target: 'it-gr' },
+  { flag: '🇬🇷', name: 'Греція', target: 'it-gr' },
+  { flag: '🇫🇮', name: 'Фінляндія', target: 'fi-se' },
+  { flag: '🇸🇪', name: 'Швеція', target: 'fi-se' },
+  { flag: '🇦🇹', name: 'Австрія', target: 'at' },
+  { flag: '🇧🇪', name: 'Бельгія', target: 'be' },
 ];
 
 export default function Countries() {
+  const goToService = (target: string) => {
+    const el = document.getElementById(`service-${target}`);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // короткий акцент на потрібній картці
+    el.classList.add('ring-2', 'ring-[#c9870a]', 'ring-offset-2');
+    setTimeout(
+      () => el.classList.remove('ring-2', 'ring-[#c9870a]', 'ring-offset-2'),
+      1600
+    );
+  };
+
   return (
     <section id="channels" className="py-14 sm:py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -28,13 +40,14 @@ export default function Countries() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
           {COUNTRIES.map((c) => (
-            <div
+            <button
               key={c.name}
-              className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-gray-200 text-[#1a3057] font-semibold text-sm hover:border-[#1a3057] hover:bg-[#1a3057] hover:text-white transition-all cursor-default"
+              onClick={() => goToService(c.target)}
+              className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-gray-200 text-[#1a3057] font-semibold text-sm hover:border-[#1a3057] hover:bg-[#1a3057] hover:text-white transition-all cursor-pointer text-left"
             >
               <span className="text-2xl">{c.flag}</span>
               {c.name}
-            </div>
+            </button>
           ))}
         </div>
 

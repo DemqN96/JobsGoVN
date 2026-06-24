@@ -34,8 +34,8 @@ export default function Home() {
         <Hero onConsult={openModal} />
         {/* 2. Stats */}
         <Reveal><Stats /></Reveal>
-        {/* 3. Відгуки — тимчасово приховано, будуть фото */}
-        {/* <Reveal><Reviews /></Reveal> */}
+        {/* 3. Відгуки */}
+        <Reveal><Reviews /></Reveal>
         {/* 4. Країни */}
         <Reveal><Countries /></Reveal>
         {/* 5. Про нас */}
