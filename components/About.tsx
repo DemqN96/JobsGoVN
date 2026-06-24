@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const BADGES = [
   { text: '15+ спеціалістів у команді' },
-  { text: '100+ клієнтів щороку 🇪🇺', highlight: true },
+  { text: '7680 влаштованих людей 🇪🇺', highlight: true },
   { text: 'Офіційне працевлаштування' },
 ];
 

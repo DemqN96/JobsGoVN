@@ -18,7 +18,7 @@ export default function Hero({ onConsult }: HeroProps) {
             оформлюємо документи, координуємо логістику та підтримуємо до виходу на роботу.
           </p>
           <p className="text-[#1a3057] font-medium mb-8">
-            Працюємо <strong>дистанційно по всій Україні</strong> та в офлайн-офісі у Вінниці.
+            Працюємо <strong>дистанційно по всій Україні та Європі</strong> і офлайн-офісі у Вінниці.
           </p>
           <button
             onClick={onConsult}
