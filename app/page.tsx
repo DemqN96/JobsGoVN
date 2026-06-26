@@ -34,16 +34,16 @@ export default function Home() {
         <Hero onConsult={openModal} />
         {/* 2. Stats */}
         <Reveal><Stats /></Reveal>
-        {/* 3. Відгуки */}
-        <Reveal><Reviews /></Reveal>
-        {/* 4. Країни */}
+        {/* 3. Країни */}
         <Reveal><Countries /></Reveal>
-        {/* 5. Про нас */}
+        {/* 4. Про нас */}
         <Reveal><About /></Reveal>
-        {/* 6. Чому варто */}
+        {/* 5. Чому варто */}
         <Reveal><WhyUs /></Reveal>
-        {/* 7. Наші послуги */}
+        {/* 6. Наші послуги */}
         <Reveal><Services /></Reveal>
+        {/* 7. Відгуки */}
+        <Reveal><Reviews /></Reveal>
         {/* 8. Як ми працюємо */}
         <Reveal><Process /></Reveal>
         {/* 9. Команда */}
