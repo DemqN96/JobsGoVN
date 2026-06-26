@@ -22,7 +22,7 @@ export default function Hero({ onConsult }: HeroProps) {
           <p className="text-white/70 text-base sm:text-xl leading-relaxed mb-9 max-w-2xl">
             Ви просто подаєте заявку — ми робимо все інше. Підбираємо вакансії,
             оформлюємо документи, координуємо виїзд і підтримуємо до виходу на роботу.
-            Дистанційно по всій Україні та Європі, офлайн-офіс у Вінниці.
+            Дистанційно по Україні та Європі, два фізичних офіси у Вінниці та Варшаві.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <button
