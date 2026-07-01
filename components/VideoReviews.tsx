@@ -1,7 +1,7 @@
 'use client';
 
 const VIDEOS = [
-  { id: 'DCBqwCNXGwU', name: 'Тестовий відгук', country: 'Тест' },
+  { id: 'VVFQ79Mwf0g', name: 'Відео-відгук', country: '' },
 ];
 
 export default function VideoReviews() {
