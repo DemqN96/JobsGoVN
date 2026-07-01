@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Stats from '@/components/Stats';
 import Reviews from '@/components/Reviews';
+import VideoReviews from '@/components/VideoReviews';
 import Countries from '@/components/Countries';
 import About from '@/components/About';
 import WhyUs from '@/components/WhyUs';
@@ -34,6 +35,8 @@ export default function Home() {
         <Hero onConsult={openModal} />
         {/* 2. Stats */}
         <Reveal><Stats /></Reveal>
+        {/* 2b. Відео-відгуки */}
+        <Reveal><VideoReviews /></Reveal>
         {/* 3. Країни */}
         <Reveal><Countries /></Reveal>
         {/* 4. Про нас */}

@@ -11,7 +11,7 @@ interface Stat {
 
 const STATS: Stat[] = [
   { end: 15,   suffix: '+',       label: 'експертів з досвідом від 3 років',          duration: 1200 },
-  { end: 8,    suffix: ' років',  label: 'офіційної роботи',                           duration: 1000 },
+  { end: 9,    suffix: ' років',  label: 'офіційної роботи',                           duration: 1000 },
   { end: 7680, suffix: '',        label: 'влаштованих людей',                          duration: 1800 },
   { end: 100,  suffix: '%',       label: 'офіційне та легальне працевлаштування',      duration: 1400 },
 ];
