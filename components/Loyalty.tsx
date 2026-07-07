@@ -3,13 +3,31 @@
 import { useState } from 'react';
 
 interface Item {
-  q: string;
+  q: React.ReactNode;
   a: React.ReactNode;
 }
 
 const ITEMS: Item[] = [
   {
-    q: 'Хочеш заробити 25€ за 2 хвилини?',
+    q: (
+      <>
+        <style>{`
+          @keyframes gold-shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+          }
+          .gold-shimmer {
+            background: linear-gradient(90deg, #c9870a, #ffd700, #fff8a0, #ffd700, #c9870a);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gold-shimmer 2.5s linear infinite;
+          }
+        `}</style>
+        <span className="gold-shimmer font-bold">25€</span> за відеовідгук
+      </>
+    ),
     a: (
       <>
         <p>
@@ -27,7 +45,7 @@ const ITEMS: Item[] = [
     ),
   },
   {
-    q: 'Ти вже працюєш в Європі через Jobs Go — і це вже говорить про те, що ти зробив правильний вибір! Є пропозиція для тебе особисто.',
+    q: 'Кешбек за рекомендацію',
     a: (
       <>
         <p>
@@ -48,7 +66,7 @@ const ITEMS: Item[] = [
     ),
   },
   {
-    q: 'Встигніть скористатися найвигіднішими пропозиціями! Щотижня ми оновлюємо знижки на вакансії та напрямки, щоб ви могли заощадити на оформленні та швидше розпочати роботу за кордоном.',
+    q: 'Акція тижня',
     a: (
       <>
         <p>Що на вас чекає:</p>
@@ -66,7 +84,7 @@ const ITEMS: Item[] = [
     ),
   },
   {
-    q: 'Їдете на роботу удвох або компанією? Отримайте знижку –20€ для кожного!',
+    q: 'Разом вигідніше',
     a: (
       <>
         <p>
