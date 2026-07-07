@@ -63,10 +63,8 @@ export default function Stats() {
   }, []);
 
   return (
-    <section ref={ref} className="relative overflow-hidden py-8 bg-[#1a3057]">
-      <img src="/office/office-02.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-[#1a3057]/72" />
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+    <section ref={ref} className="py-8 bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="bg-white rounded-2xl border border-gray-200 shadow-sm grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-gray-100">
           {STATS.map((s) => (
             <StatItem key={s.label} stat={s} started={started} />

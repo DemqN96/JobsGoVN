@@ -97,12 +97,10 @@ export default function Services() {
   }, [detailsId, photo]);
 
   return (
-    <section id="vacancies" className="relative overflow-hidden py-14 sm:py-20 bg-[#1a3057]">
-      <img src="/office/office-04.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-[#1a3057]/72" />
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="vacancies" className="py-14 sm:py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057]">
             <span className="bg-[#c9870a] text-white px-2 rounded mr-2">Наші</span>послуги
           </h2>
         </div>
