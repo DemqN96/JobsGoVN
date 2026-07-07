@@ -35,10 +35,7 @@ const REASONS = [
 export default function WhyUs() {
   return (
     <section className="relative overflow-hidden py-14 sm:py-20 bg-[#1a3057]">
-      <div className="absolute inset-0 flex">
-        <img src="/office/office-03.png" alt="" aria-hidden="true" className="w-1/2 h-full object-cover" />
-        <img src="/office/office-04.png" alt="" aria-hidden="true" className="w-1/2 h-full object-cover" />
-      </div>
+      <img src="/office/office-03.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-[#1a3057]/72" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">

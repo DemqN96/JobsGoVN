@@ -111,10 +111,7 @@ export default function Story() {
 
   return (
     <section id="story" className="relative overflow-hidden py-14 sm:py-20 bg-[#1a3057]">
-      <div className="absolute inset-0 flex">
-        <img src="/office/office-07.png" alt="" aria-hidden="true" className="w-1/2 h-full object-cover" />
-        <img src="/office/office-08.png" alt="" aria-hidden="true" className="w-1/2 h-full object-cover" />
-      </div>
+      <img src="/office/office-07.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-[#1a3057]/72" />
 
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">

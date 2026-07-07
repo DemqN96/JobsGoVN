@@ -34,10 +34,7 @@ const STEPS = [
 export default function Process() {
   return (
     <section id="process" className="relative overflow-hidden py-20 bg-[#1a3057]">
-      <div className="absolute inset-0 flex">
-        <img src="/office/office-05.png" alt="" aria-hidden="true" className="w-1/2 h-full object-cover" />
-        <img src="/office/office-06.png" alt="" aria-hidden="true" className="w-1/2 h-full object-cover" />
-      </div>
+      <img src="/office/office-05.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-[#1a3057]/72" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
