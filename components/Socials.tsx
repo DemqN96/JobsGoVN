@@ -24,12 +24,14 @@ const SOCIALS = [
 
 export default function Socials() {
   return (
-    <section className="py-20 bg-[#f5f7fa]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] mb-3">
+    <section className="relative overflow-hidden py-20 bg-[#1a3057]">
+      <img src="/office/office-08.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-[#1a3057]/72" />
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
           Ми в соцмережах
         </h2>
-        <p className="text-gray-500 mb-12 max-w-2xl">
+        <p className="text-white/70 mb-12 max-w-2xl">
           Закулісся роботи, історії наших кандидатів та реальні умови у країнах ЄС.
         </p>
 
