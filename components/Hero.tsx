@@ -28,12 +28,15 @@ export default function Hero({ onConsult }: HeroProps) {
           <p className="text-white/90 font-medium mb-8">
             Працюємо <strong>дистанційно по Україні та Європі</strong> та маємо два фізичних офіси у Вінниці та Варшаві.
           </p>
-          <button
-            onClick={onConsult}
-            className="bg-[#c9870a] hover:bg-[#e09f1a] text-white font-bold px-8 py-4 rounded-md text-base transition-colors shadow-sm"
-          >
-            Підібрати вакансію
-          </button>
+          <div className="relative inline-block">
+            <span className="absolute inset-0 rounded-md bg-[#c9870a] animate-ping opacity-40" />
+            <button
+              onClick={onConsult}
+              className="relative bg-[#c9870a] hover:bg-[#e09f1a] text-white font-bold px-8 py-4 rounded-md text-base transition-colors shadow-sm"
+            >
+              Підібрати вакансію
+            </button>
+          </div>
         </div>
       </div>
     </section>
