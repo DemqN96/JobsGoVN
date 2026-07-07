@@ -1,3 +1,5 @@
+'use client';
+
 const COUNTRIES = [
   { flag: '🇩🇪', name: 'Німеччина', target: 'de' },
   { flag: '🇳🇱', name: 'Нідерланди', target: 'nl' },
@@ -26,13 +28,19 @@ export default function Countries() {
   };
 
   return (
-    <section id="channels" className="py-14 sm:py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="channels" className="relative overflow-hidden py-14 sm:py-20 bg-[#1a3057]">
+      <div className="absolute inset-0 flex">
+        <img src="/office/office-01.png" alt="" aria-hidden="true" className="w-1/2 h-full object-cover" />
+        <img src="/office/office-02.png" alt="" aria-hidden="true" className="w-1/2 h-full object-cover" />
+      </div>
+      <div className="absolute inset-0 bg-[#1a3057]/72" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
             Країни, де ми працевлаштовуємо
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
+          <p className="text-white/70 max-w-xl mx-auto">
             Підбираємо офіційні вакансії у країнах Євросоюзу — з контрактом,
             соціальним захистом та легальним оформленням.
           </p>
@@ -43,7 +51,7 @@ export default function Countries() {
             <button
               key={c.name}
               onClick={() => goToService(c.target)}
-              className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-gray-200 text-[#1a3057] font-semibold text-sm hover:border-[#1a3057] hover:bg-[#1a3057] hover:text-white transition-all cursor-pointer text-left"
+              className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-white/30 text-white font-semibold text-sm hover:border-white hover:bg-white hover:text-[#1a3057] transition-all cursor-pointer text-left"
             >
               <span className="text-2xl">{c.flag}</span>
               {c.name}
@@ -51,7 +59,7 @@ export default function Countries() {
           ))}
         </div>
 
-        <div className="bg-[#f8f9fb] rounded-xl px-6 py-4 text-center text-gray-500 text-sm mb-10">
+        <div className="bg-white/10 rounded-xl px-6 py-4 text-center text-white/70 text-sm mb-10">
           Не бачите потрібну країну? Напишіть нам — можливо ми вже маємо вакансії в цьому напрямку
         </div>
 

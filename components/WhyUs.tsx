@@ -34,9 +34,15 @@ const REASONS = [
 
 export default function WhyUs() {
   return (
-    <section className="py-14 sm:py-20 bg-[#f8f9fb]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] text-center mb-12">
+    <section className="relative overflow-hidden py-14 sm:py-20 bg-[#1a3057]">
+      <div className="absolute inset-0 flex">
+        <img src="/office/office-03.png" alt="" aria-hidden="true" className="w-1/2 h-full object-cover" />
+        <img src="/office/office-04.png" alt="" aria-hidden="true" className="w-1/2 h-full object-cover" />
+      </div>
+      <div className="absolute inset-0 bg-[#1a3057]/72" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">
           Чому варто звернутись до нас?
         </h2>
 

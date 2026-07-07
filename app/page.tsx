@@ -12,6 +12,7 @@ import WhyUs from '@/components/WhyUs';
 import Services from '@/components/Services';
 import Process from '@/components/Process';
 import Team from '@/components/Team';
+import Loyalty from '@/components/Loyalty';
 import Story from '@/components/Story';
 import Socials from '@/components/Socials';
 import LeadModal from '@/components/LeadModal';
@@ -47,6 +48,8 @@ export default function Home() {
         <Reveal><Services /></Reveal>
         {/* 7. Відгуки */}
         <Reveal><Reviews /></Reveal>
+        {/* 7b. Програма лояльності */}
+        <Reveal><Loyalty /></Reveal>
         {/* 8. Як ми працюємо */}
         <Reveal><Process /></Reveal>
         {/* 9. Команда */}
