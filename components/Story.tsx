@@ -110,16 +110,13 @@ export default function Story() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="story" className="relative overflow-hidden py-14 sm:py-20 bg-[#1a3057]">
-      <img src="/office/office-07.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-[#1a3057]/72" />
-
-      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
+    <section id="story" className="py-14 sm:py-20 bg-[#f8f9fb]">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] mb-3">
             Наша історія
           </h2>
-          <p className="text-white/70 max-w-xl mx-auto">
+          <p className="text-gray-500 max-w-xl mx-auto">
             Чому OpenVisa тепер це три окремі сторінки? Куди зникли старі акаунти
             на 16 тисяч і 1200 підписників? І як нас знову не загубити?
           </p>
@@ -131,7 +128,7 @@ export default function Story() {
             return (
               <div
                 key={i}
-                className="bg-white/95 rounded-2xl border border-gray-100 overflow-hidden"
+                className="bg-white rounded-2xl border border-gray-100 overflow-hidden"
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}

@@ -33,15 +33,12 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section id="process" className="relative overflow-hidden py-20 bg-[#1a3057]">
-      <img src="/office/office-05.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-[#1a3057]/72" />
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+    <section id="process" className="py-20 bg-[#f5f7fa]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] mb-3">
           Як ми працюємо
         </h2>
-        <p className="text-white/70 mb-12 max-w-xl">
+        <p className="text-gray-500 mb-12 max-w-xl">
           Прозорий процес без прихованих кроків — ви завжди знаєте, що відбувається.
         </p>
 
@@ -49,7 +46,7 @@ export default function Process() {
           {STEPS.map((step) => (
             <div
               key={step.num}
-              className="bg-white/95 rounded-xl p-6 border border-gray-100 shadow-sm"
+              className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm"
             >
               <span className="text-4xl font-bold text-[#c9870a]/30">{step.num}</span>
               <h3 className="text-[#1a3057] font-bold text-lg mt-2 mb-2">{step.title}</h3>
