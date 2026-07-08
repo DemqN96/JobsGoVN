@@ -64,7 +64,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-[#c9870a] transition-colors"
                 >
-                  м. Вінниця, пл. Гагаріна, 2<br />
+                  м. Вінниця, пл. Калічанська, 2<br />
                   ТЦ «Вінницький універмаг»
                 </a>
               </li>
