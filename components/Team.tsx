@@ -43,13 +43,15 @@ const GROUP_PORTRAIT = [
 
 export default function Team() {
   return (
-    <section id="team" className="py-20 bg-[#f8f9fb]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-8">
+    <section id="team" className="relative overflow-hidden py-20 bg-[#1a3057]">
+      <img src="/office/office-09.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-[#1a3057]/72" />
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a3057] mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
             Наша команда
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
+          <p className="text-white/70 max-w-xl mx-auto">
             Понад 15 спеціалістів — від рекрутерів до операційного директора —
             працюють над вашим працевлаштуванням.
           </p>
@@ -94,7 +96,7 @@ export default function Team() {
       </div>
 
       {/* Team carousel — full bleed */}
-      <div className="mt-2">
+      <div className="relative z-10 mt-2">
         <TeamCarousel members={TEAM} />
       </div>
     </section>
