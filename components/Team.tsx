@@ -10,7 +10,7 @@ export interface Member {
 }
 
 const TEAM: Member[] = [
-  { name: 'Світлана', role: 'Генеральний директор', photo: '/team/IMG_7888.JPG', email: 'ceo.openvisa@gmail.com' },
+  { name: 'Світлана Орлюк', role: 'Генеральний директор', photo: '/team/IMG_7888.JPG', email: 'ceo.openvisa@gmail.com' },
   { name: 'Аніта', role: 'Операційний директор', photo: '/team/IMG_5783.JPG' },
   { name: 'Світлана', role: 'Керівник департаменту працевлаштування за кордоном', photo: '/team/IMG_5809.JPG' },
   { name: 'Людмила', role: 'Старший менеджер з працевлаштування за кордоном', photo: '/team/IMG_5801.JPG' },
