@@ -3,47 +3,11 @@
 import { useState } from 'react';
 
 interface Item {
-  q: React.ReactNode;
+  q: string;
   a: React.ReactNode;
 }
 
 const ITEMS: Item[] = [
-  {
-    q: (
-      <>
-        <style>{`
-          @keyframes gold-shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-          }
-          .gold-shimmer {
-            background: linear-gradient(90deg, #c9870a, #ffd700, #fff8a0, #ffd700, #c9870a);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gold-shimmer 2.5s linear infinite;
-          }
-        `}</style>
-        <span className="gold-shimmer font-bold">25€</span> за відеовідгук
-      </>
-    ),
-    a: (
-      <>
-        <p>
-          Якщо ти вже працював через Jobs Go і залишився задоволений — просто
-          запиши коротке відео про свій досвід. Як все було, що сподобалось, чи рекомендуєш.
-        </p>
-        <p>
-          Надсилаєш нам — і отримуєш <strong className="text-[#1a3057]">25€ на картку</strong>. Все.
-        </p>
-        <p>
-          Нам важливо чути реальні історії наших клієнтів. А тобі за це приємний
-          бонус. Пиши в Директ — домовимось.
-        </p>
-      </>
-    ),
-  },
   {
     q: 'Кешбек за рекомендацію',
     a: (
