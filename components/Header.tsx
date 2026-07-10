@@ -34,7 +34,7 @@ export default function Header({ onConsult }: HeaderProps) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
         <a href="#" className="flex-shrink-0 flex items-center gap-3">
           <Image src="/logo.png" alt="Jobs Go EU" width={44} height={44} priority />
-          <span className="hidden sm:block font-bold text-[#1a3057] text-lg leading-tight">
+          <span className="font-bold text-[#1a3057] text-lg leading-tight">
             Jobs Go <span className="text-[#c9870a]">EU</span>
           </span>
         </a>
