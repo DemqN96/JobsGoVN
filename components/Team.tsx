@@ -67,7 +67,7 @@ export default function Team() {
               >
                 <Image
                   src={src}
-                  alt="Команда Jobs Go VN"
+                  alt="Команда Jobs Go EU"
                   fill
                   sizes="50vw"
                   className="object-cover object-top hover:scale-105 transition-transform duration-700"
@@ -83,7 +83,7 @@ export default function Team() {
               >
                 <Image
                   src={src}
-                  alt="Команда Jobs Go VN"
+                  alt="Команда Jobs Go EU"
                   fill
                   sizes="50vw"
                   className="object-cover object-top hover:scale-105 transition-transform duration-700"

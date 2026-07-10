@@ -16,7 +16,7 @@ export default function About() {
         <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-6 shadow-md">
           <Image
             src="/team/IMG_5833.JPG"
-            alt="Команда Jobs Go VN"
+            alt="Команда Jobs Go EU"
             fill
             sizes="100vw"
             priority
@@ -26,7 +26,7 @@ export default function About() {
 
         {/* White card — like Open Visa */}
         <div className="bg-white border border-gray-100 rounded-2xl shadow-sm p-7 mb-6">
-          <p className="font-bold text-[#1a3057] mb-3">Jobs Go VN</p>
+          <p className="font-bold text-[#1a3057] mb-3">Jobs Go EU</p>
           <div className="space-y-3 text-gray-600 leading-relaxed text-sm">
             <p>
               Команда з офіційного працевлаштування, яка допомагає громадянам України знайти роботу

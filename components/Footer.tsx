@@ -14,9 +14,9 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <Image src="/logo.png" alt="Jobs Go VN" width={44} height={44} className="brightness-0 invert opacity-90" />
+              <Image src="/logo.png" alt="Jobs Go EU" width={44} height={44} className="brightness-0 invert opacity-90" />
               <span className="font-bold text-white text-lg">
-                Jobs Go <span className="text-[#c9870a]">VN</span>
+                Jobs Go <span className="text-[#c9870a]">EU</span>
               </span>
             </div>
             <p className="text-sm leading-relaxed mb-6">
@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
-          <p>© {new Date().getFullYear()} Jobs Go VN. Всі права захищено.</p>
+          <p>© {new Date().getFullYear()} Jobs Go EU. Всі права захищено.</p>
           <p>Розроблено в Україні 🇺🇦</p>
         </div>
       </div>
